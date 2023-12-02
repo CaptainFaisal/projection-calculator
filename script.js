@@ -17,7 +17,9 @@ const removeRow = () => {
 }
 const makeNotNaN = (elements) => elements.map(element => isNaN(element) ? 0 : element);
 
+const data = [];
 const calculate = () => {
+    data.length = 0;
     const table  = document.getElementById("myTable");
     const rows = table.rows;
     Array.from(rows).slice(1).forEach(row => {
@@ -31,5 +33,28 @@ const calculate = () => {
         cells[cols - 3].innerHTML = x_prime.toFixed(digits);
         cells[cols - 2].innerHTML = y_prime.toFixed(digits);
         cells[cols - 1].innerHTML = z_prime.toFixed(digits);
+        data.push({Px, Py, Pz, Qx, Qy, Qz, zp, x_prime, y_prime, z_prime})
     });
+}
+const generateTable = () => {
+    const thead = document.querySelector(".head");
+    thead.classList.remove("hide");
+    document.querySelectorAll("table")[1].classList.remove("hide");
+    const table = document.getElementById("result");
+    table.innerHTML = "";
+    data.forEach((row, index) => {
+        const cols = Object.keys(row).length;
+        const tr = document.createElement("tr");
+        for(let i = 0; i < cols; i++) {
+            const td = document.createElement("td");
+            td.innerHTML = Object.values(row)[i].toFixed(3);
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    });
+}
+
+const removeTable = () => {
+    const table = document.querySelectorAll("table")[1];
+    table.classList.add("hide");
 }

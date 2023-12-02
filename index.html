@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projection Calculator</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .hide{
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -29,10 +34,31 @@
     <tbody>
     </tbody>
   </table>
+  <!-- TAble for showing the generated result -->
+  <table class="table table-bordered">
+    <thead class="head hide">
+      <tr>
+        <th>Px</th>
+        <th>Py</th>
+        <th>Pz</th>
+        <th>Qx</th>
+        <th>Qy</th>
+        <th>Qz</th>
+        <th>zp</th>
+        <th>Px'</th>
+        <th>Py'</th>
+        <th>Pz'</th>
+      </tr>
+    </thead>
+    <tbody id="result">
+    </tbody>
+  </table>
 
   <button class="btn btn-primary add-button" onclick="addRow()">Add Row</button>
   <button class="btn btn-danger remove-button" onclick="removeRow()">Remove Row</button>
   <button class="btn btn-success calculate-button" onclick="calculate()">Calculate</button>
+  <button class="btn btn-dark result-button" onclick="generateTable()">Generate Table</button>
+  <button class="btn btn-danger remove-button" onclick="removeTable()">Remove Table</button>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
