@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projection Calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h2 class="mt-4">Projection Calculator</h2>
+
+  <table class="table table-bordered" id="myTable">
+    <thead class="thead-dark">
+      <tr>
+        <th>Px</th>
+        <th>Py</th>
+        <th>Pz</th>
+        <th>Qx</th>
+        <th>Qy</th>
+        <th>Qz</th>
+        <th>zp</th>
+        <th>Px'</th>
+        <th>Py'</th>
+        <th>Pz'</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary add-button" onclick="addRow()">Add Row</button>
+  <button class="btn btn-danger remove-button" onclick="removeRow()">Remove Row</button>
+  <button class="btn btn-success calculate-button" onclick="calculate()">Calculate</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
